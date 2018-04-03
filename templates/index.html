@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta name="description" content="UFO Sighting">
+        <meta name="author" content="Monica Martin">
+
+        <title>Biodiversity Dashboard</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        
+        <!-- Custom styles for this template -->
+        <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='./css/style.css')}}" />
+        <!-- Plotly.js -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+        <main role="main" class="container">
+            <div class="jumbotron">
+              <h1 style="text-align:center;">Belly Button Biodiversity<br>Dashboard</h1>
+              <p class="lead" style="text-align:center;">Use the interactive charts below to explore the dataset</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div id="selSample" class="card">
+                            <h5 class="card-header">SELECT Sample:</h5>
+                            <div class="card-body" style="margin: auto"> 
+                                <select id="selDataset" onchange="optionChanged(this.value)">
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="MetaData" class="card">
+                            <h5  id="MetaData-header" class="card-header">Sample MetaData</h5>
+                                <div class="card-body">
+                                    <ul id="metaDataList">
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div id="pieChart"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="gauge"></div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="bubbleChart"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Main javascript -->
+        <script src="./static/script/dashboard.js"></script>           
+        <!-- d3.js -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>     
+        <!-- Numeric JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+        <!-- JQuery 3.2.1-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <!-- Popper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!-- Bootsrap 4.0 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+
